@@ -71,7 +71,7 @@ void contactManagement(){
 	}
 
 	else if (inputMenu2 == 2) {
-
+		searchCustomer();
 	}
 
 	else{
@@ -99,6 +99,20 @@ void addCustomer(){
     customerNumber++;
     fclose(fp);
 }
+
+void searchCustomer(){
+	printf("\n--------------customer list------------");
+    printf("\nid\tname\tphone\temail");
+    FILE *fp;
+    fp = fopen(CUSTOMERDATAPATH, "r");
+    while (!feof(fp)) {
+        fscanf(fp, "%s%s%s%s", customer_id, customer_name, customer_phone, customer_email);
+        printf("\n%s\t%s\t%s\t%s", customer_id, customer_name, customer_phone, customer_email);
+    }
+    fclose(fp);
+	printf("\n");
+}
+
 
 
 void salesData() {
