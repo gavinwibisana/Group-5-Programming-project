@@ -28,8 +28,8 @@ int customerID = 0;
 char sales_customer_id[8];
 char salesperson_name[20];
 char item[20];
-char year[4];
-char month[2];
+char year[5];
+char month[3];
 float quantity;
 float price;
 float total_sales;
@@ -137,7 +137,7 @@ void salesMenu() {
             salesStoreData();
         }
         else if(inputMenu3 == 2){
-
+            searchSales();
         }
         else{
             printf("Try Again! \n");
@@ -153,7 +153,7 @@ void salesStoreData(){
     printf("person in charge: \n");
     scanf("%s", salesperson_name);
     printf("year: \n");
-    scanf("%s" ,year);
+    scanf("%s", year);
     printf("month: \n");
     scanf("%s" , month);
     printf("quantity: \n");
@@ -168,4 +168,17 @@ void salesStoreData(){
     printf("Successfully saved! \n");
     customerID++;
     fclose(fp);
+}
+
+void searchSales(){
+        printf("\n--------sales data----------");
+    printf("\ncustomerID \t saleperson\tyear\tmonth\tquantity\tprice\ttotal sales");
+    FILE *fp;
+    fp = fopen(SALESDATAPATH, "r");
+    while (!feof(fp)) {
+        fscanf(fp, "%s %s %s %s %.2f %.2f %.2f\n", sales_customer_id, salesperson_name, year, month, quantity, price, total_sales);
+        printf("\n%s\t%s\t%s\t%s\t%f\t%.2f\t%.2f", sales_customer_id, salesperson_name, year, month, quantity, price, total_sales);
+    }
+    fclose(fp);
+    printf("\n");
 }
