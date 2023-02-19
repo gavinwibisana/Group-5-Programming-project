@@ -33,6 +33,10 @@ char month[3];
 float quantity;
 float price;
 float total_sales;
+char print_quantity[20];
+char print_price[20];
+char print_total_sales[20];
+
 
 
 
@@ -163,7 +167,6 @@ void salesStoreData(){
 
     total_sales = quantity * price;
 
-    
     fprintf(fp, "%s %s %s %s %.2f %.2f %.2f\n", sales_customer_id, salesperson_name, year, month, quantity, price, total_sales);
     printf("Successfully saved! \n");
     customerID++;
@@ -172,12 +175,12 @@ void salesStoreData(){
 
 void searchSales(){
         printf("\n--------sales data----------");
-    printf("\ncustomerID \t saleperson\tyear\tmonth\tquantity\tprice\ttotal sales");
+    printf("\nID \tsales person\tyear\tmonth\tquantity\tprice\ttotal sales");
     FILE *fp;
     fp = fopen(SALESDATAPATH, "r");
     while (!feof(fp)) {
-        fscanf(fp, "%s %s %s %s %.2f %.2f %.2f\n", sales_customer_id, salesperson_name, year, month, quantity, price, total_sales);
-        printf("\n%s\t%s\t%s\t%s\t%f\t%.2f\t%.2f", sales_customer_id, salesperson_name, year, month, quantity, price, total_sales);
+        fscanf(fp, "%s %s %s %s %s %s %s\n", sales_customer_id, salesperson_name, year, month, print_quantity, print_price, print_total_sales);
+        printf("\n%s \t%s \t\t%s \t%s \t%s \t\t%s \t%s", sales_customer_id, salesperson_name, year, month, print_quantity, print_price, print_total_sales);
     }
     fclose(fp);
     printf("\n");
