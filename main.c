@@ -8,6 +8,7 @@ Yuehaozhe Xie 926qraeo
 GitHub Link: https://github.com/gavinwibisana/Group-5-Programming-project
 */
 
+// import library to use
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -39,13 +40,13 @@ char print_total_sales[20];
 
 
 
-
+// program starts here
 int main(){
 	mainMenu();
 	return 0;
 }
 
-
+// display main menu
 void mainMenu(){
 	int inputMenu = 0;
 	while (inputMenu != 3){
@@ -57,22 +58,22 @@ void mainMenu(){
         scanf("%d", &inputMenu);
 
 		if (inputMenu == 1){
-			contactManagementMenu();
+			contactManagementMenu(); // go to contact management menu
 		}
 
 		else if (inputMenu == 2){
-			salesMenu();
+			salesMenu(); // go to sales menu
 		}
 		else if (inputMenu == 3){
-			exit(0);
+			exit(0); // exit the program
 		}
 		else{
-			printf("Try Again!\n");
+			printf("Try Again!\n"); // handle execption when user put wrong menus
 		}
 	}
 }
 
-// customer data management function start here
+// customer data management function menu start here
 void contactManagementMenu(){
 	int inputMenu2 = 0 ;
 	while (inputMenu2 != 2){
@@ -96,6 +97,7 @@ void contactManagementMenu(){
     }
 }
 
+// add customer data and save it as txt file
 void addCustomer(){
 	FILE *fp;
     fp = fopen(CUSTOMERDATAPATH, "a");
@@ -115,6 +117,7 @@ void addCustomer(){
     fclose(fp);
 }
 
+// list all customer data inside the txt file
 void searchCustomer(){
 	printf("\n--------------customer list------------");
     printf("\nid\tname\tphone\temail");
@@ -149,6 +152,7 @@ void salesMenu() {
 	}
 }
 
+// add and store sales data as txt file
 void salesStoreData(){
     FILE *fp;
     fp = fopen(SALESDATAPATH, "a");
@@ -167,7 +171,7 @@ void salesStoreData(){
     printf("price: \n");
     scanf("%f" , &price);
 
-    total_sales = quantity * price;
+    total_sales = quantity * price; // total price is calculated by quantity times price per pcs
 
     fprintf(fp, "%s %s %s %s %s %.2f %.2f %.2f\n", sales_customer_id, salesperson_name, item, year, month, quantity, price, total_sales);
     printf("Successfully saved! \n");
@@ -175,6 +179,7 @@ void salesStoreData(){
     fclose(fp);
 }
 
+// list all sales data from txt file
 void searchSales(){
         printf("\n--------Sales Data----------");
     printf("\nID \tsales person\titem name\tyear\tmonth\tquantity\tprice\ttotal sales");
