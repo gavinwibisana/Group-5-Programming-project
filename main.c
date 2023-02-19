@@ -52,15 +52,24 @@ void contactManagement(){
     scanf("%d" ,&inputMenu2);
 
 	if (inputMenu2 == 1){
+		addCustomer();
+	}
+
+	else if (inputMenu2 == 2) {
 
 	}
 
-	if (inputMenu2 == 2) {
-
-	}	
+	else{
+		printf("Try Again! \n");
+	}
 	
 }
 }
+
+void addCustomer(){
+
+}
+
 
 void salesData() {
 }
