@@ -18,10 +18,26 @@ int main(){
 
 void mainMenu(){
 	int inputMenu = 0;
+	while (inputMenu != 3){
 		printf("-------------- MAIN MENU ------------\n");
         printf("1. Contact Management \n");
         printf("2. Sales Data \n");
         printf("3. Exit \n");
         printf("Enter your Choice: \n");
         scanf("%d", &inputMenu);
+
+		if (inputMenu == 1){
+
+		}
+
+		if (inputMenu == 2){
+
+		}
+		if (inputMenu == 3){
+			
+		}
+		else{
+			printf("Try Again!\n");
+		}
+	}
 }
