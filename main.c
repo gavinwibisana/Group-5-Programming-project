@@ -43,11 +43,11 @@ void mainMenu(){
         scanf("%d", &inputMenu);
 
 		if (inputMenu == 1){
-			contactManagement();
+			contactManagementMenu();
 		}
 
 		else if (inputMenu == 2){
-			salesData();
+			salesMenu();
 		}
 		else if (inputMenu == 3){
 			exit(0);
@@ -59,7 +59,7 @@ void mainMenu(){
 }
 
 // customer data management function start here
-void contactManagement(){
+void contactManagementMenu(){
 	int inputMenu2 = 0 ;
 	while (inputMenu2 != 2){
     printf("1. store customer \n");
@@ -116,7 +116,7 @@ void searchCustomer(){
 // customer data management function end here
 
 // sales data function start from here
-void salesData() {
+void salesMenu() {
 	int inputMenu3 = 0;
 	while(inputMenu3 != 2){
     printf("1. store sales data \n");
@@ -124,7 +124,7 @@ void salesData() {
     printf("enter your choice: \n");
     scanf("%d", &inputMenu3);
     if (inputMenu3 == 1){
-
+        
     }
     else if(inputMenu3 == 2){
 
