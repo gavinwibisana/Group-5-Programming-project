@@ -9,6 +9,7 @@ GitHub Link: https://github.com/gavinwibisana/Group-5-Programming-project
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
 	mainMenu();
@@ -44,7 +45,7 @@ void mainMenu(){
 
 void contactManagement(){
 	int inputMenu2 = 0 ;
-	While (inputMenu2 != 2){
+	while (inputMenu2 != 2){
     printf("1. store customer \n");
     printf("2. search customer \n");
     printf("enter your choice: ");
