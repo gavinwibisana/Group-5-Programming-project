@@ -161,9 +161,10 @@ void salesStoreData(){
     printf("price: \n");
     scanf("%f" , &price);
 
+    total_sales = quantity * price;
 
     
-    fprintf(fp, "%s %s %s %s %f %f \n", sales_customer_id, salesperson_name, year, month, quantity, price);
+    fprintf(fp, "%s %s %s %s %.2f %.2f %.2f\n", sales_customer_id, salesperson_name, year, month, quantity, price, total_sales);
     printf("Successfully saved! \n");
     customerID++;
     fclose(fp);
