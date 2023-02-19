@@ -11,6 +11,12 @@ GitHub Link: https://github.com/gavinwibisana/Group-5-Programming-project
 #include <stdio.h>
 
 int main(){
+	mainMenu();
+	return 0;
+}
+
+
+void mainMenu(){
 	int inputMenu = 0;
 		printf("-------------- MAIN MENU ------------\n");
         printf("1. Contact Management \n");
@@ -18,5 +24,4 @@ int main(){
         printf("3. Exit \n");
         printf("Enter your Choice: \n");
         scanf("%d", &inputMenu);
-	return 0;
 }
