@@ -14,7 +14,7 @@ GitHub Link: https://github.com/gavinwibisana/Group-5-Programming-project
 
 // define data PATH
 #define CUSTOMERDATAPATH "C:/Users/gavin/OneDrive/Documents/GitHub/CRM/Group-5-Programming-project/data/customers.txt"
-
+#define SALESDATAPATH "C:/Users/gavin/OneDrive/Documents/GitHub/CRM/Group-5-Programming-project/data/sales.txt"
 
 // Declare Variable for storing customer data
 char customer_id   [8];
@@ -23,6 +23,16 @@ char customer_phone[10];
 char customer_email[15];
 int customerNumber = 0;
 int customerID = 0;
+
+// Declare variable for storing sales data
+char sales_customer_id[8];
+char salesperson_name[20];
+char item[20];
+char year[4];
+char month[2];
+float quantity;
+float price;
+float total_sales;
 
 
 
@@ -62,24 +72,24 @@ void mainMenu(){
 void contactManagementMenu(){
 	int inputMenu2 = 0 ;
 	while (inputMenu2 != 2){
-    printf("1. store customer \n");
-    printf("2. search customer \n");
-    printf("enter your choice: ");
-    scanf("%d" ,&inputMenu2);
+        printf("1. store customer \n");
+        printf("2. search customer \n");
+        printf("enter your choice: ");
+        scanf("%d" ,&inputMenu2);
 
-	if (inputMenu2 == 1){
-		addCustomer();
-	}
+        if (inputMenu2 == 1){
+            addCustomer();
+        }
 
-	else if (inputMenu2 == 2) {
-		searchCustomer();
-	}
+        else if (inputMenu2 == 2) {
+            searchCustomer();
+        }
 
-	else{
-		printf("Try Again! \n");
-	}
-	
-}
+        else{
+            printf("Try Again! \n");
+        }
+        
+    }
 }
 
 void addCustomer(){
@@ -119,18 +129,42 @@ void searchCustomer(){
 void salesMenu() {
 	int inputMenu3 = 0;
 	while(inputMenu3 != 2){
-    printf("1. store sales data \n");
-    printf("2. search sales data \n");
-    printf("enter your choice: \n");
-    scanf("%d", &inputMenu3);
-    if (inputMenu3 == 1){
-        
-    }
-    else if(inputMenu3 == 2){
+        printf("1. store sales data \n");
+        printf("2. search sales data \n");
+        printf("enter your choice: \n");
+        scanf("%d", &inputMenu3);
+        if (inputMenu3 == 1){
+            salesStoreData();
+        }
+        else if(inputMenu3 == 2){
 
-    }
-    else{
-        printf("Try Again! \n");
-    }
+        }
+        else{
+            printf("Try Again! \n");
+        }
 	}
+}
+
+void salesStoreData(){
+    FILE *fp;
+    fp = fopen(SALESDATAPATH, "a");
+    printf("customer ID: \n");
+    scanf("%s", sales_customer_id);
+    printf("person in charge: \n");
+    scanf("%s", salesperson_name);
+    printf("year: \n");
+    scanf("%s" ,year);
+    printf("month: \n");
+    scanf("%s" , month);
+    printf("quantity: \n");
+    scanf("%f" , &quantity);
+    printf("price: \n");
+    scanf("%f" , &price);
+
+
+    
+    fprintf(fp, "%s %s %s %s %f %f \n", sales_customer_id, salesperson_name, year, month, quantity, price);
+    printf("Successfully saved! \n");
+    customerID++;
+    fclose(fp);
 }
