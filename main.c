@@ -65,6 +65,7 @@ void mainMenu(){
 			salesMenu(); // go to sales menu
 		}
 		else if (inputMenu == 3){
+            printf("Thank You for using my CSM Program!");
 			exit(0); // exit the program
 		}
 		else{
