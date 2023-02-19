@@ -10,6 +10,21 @@ GitHub Link: https://github.com/gavinwibisana/Group-5-Programming-project
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+// define data PATH
+#define CUSTOMERDATAPATH "C:/Users/gavin/OneDrive/Documents/GitHub/CRM/Group-5-Programming-project/data/customers.txt"
+
+
+// Declare Variable for storing customer data
+char customer_id   [8];
+char customer_name [20];
+char customer_phone[10];
+char customer_email[15];
+int customerNumber = 0;
+int customerID = 0;
+
+
 
 int main(){
 	mainMenu();
@@ -67,7 +82,22 @@ void contactManagement(){
 }
 
 void addCustomer(){
+	FILE *fp;
+    fp = fopen(CUSTOMERDATAPATH, "a");
 
+    printf("ID: ");
+    scanf("%s", customer_id);
+    printf("NAME: \n");
+    scanf("%s", customer_name);
+    printf("PHONE: \n");
+    scanf("%s" ,customer_phone);
+    printf("EMAIL: \n");
+    scanf("%s" , customer_email);
+
+    fprintf(fp, "%s %s %s %s\n", customer_id, customer_name, customer_phone, customer_email);
+    printf("Successfully saved! \n");
+    customerNumber++;
+    fclose(fp);
 }
 
 
