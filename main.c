@@ -23,21 +23,43 @@ void mainMenu(){
         printf("1. Contact Management \n");
         printf("2. Sales Data \n");
         printf("3. Exit \n");
-        printf("Enter your Choice: \n");
+        printf("Enter your Choice: ");
         scanf("%d", &inputMenu);
 
 		if (inputMenu == 1){
-
+			contactManagement();
 		}
 
-		if (inputMenu == 2){
-
+		else if (inputMenu == 2){
+			salesData();
 		}
-		if (inputMenu == 3){
-			
+		else if (inputMenu == 3){
+			exit(0);
 		}
 		else{
 			printf("Try Again!\n");
 		}
 	}
+}
+
+void contactManagement(){
+	int inputMenu2 = 0 ;
+	While (inputMenu2 != 2){
+    printf("1. store customer \n");
+    printf("2. search customer \n");
+    printf("enter your choice: ");
+    scanf("%d" ,&inputMenu2);
+
+	if (inputMenu2 == 1){
+
+	}
+
+	if (inputMenu2 == 2) {
+
+	}	
+	
+}
+}
+
+void salesData() {
 }
