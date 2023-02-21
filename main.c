@@ -78,9 +78,9 @@ void mainMenu(){
 void contactManagementMenu(){
 	int inputMenu2 = 0 ;
 	while (inputMenu2 != 2){
-        printf("1. store customer \n");
-        printf("2. search customer \n");
-        printf("enter your choice: ");
+        printf("1. Store Customer \n");
+        printf("2. Search Customer \n");
+        printf("Enter your Choice: ");
         scanf("%d" ,&inputMenu2);
 
         if (inputMenu2 == 1){
@@ -137,9 +137,9 @@ void searchCustomer(){
 void salesMenu() {
 	int inputMenu3 = 0;
 	while(inputMenu3 != 2){
-        printf("1. store sales data \n");
-        printf("2. search sales data \n");
-        printf("enter your choice: \n");
+        printf("1. Store Sales Data \n");
+        printf("2. Search Sales Data \n");
+        printf("Enter your Choice: \n");
         scanf("%d", &inputMenu3);
         if (inputMenu3 == 1){
             salesStoreData();
@@ -159,17 +159,17 @@ void salesStoreData(){
     fp = fopen(SALESDATAPATH, "a");
     printf("customer ID: \n");
     scanf("%s", sales_customer_id);
-    printf("person in charge: \n");
+    printf("Person in Charge: \n");
     scanf("%s", salesperson_name);
     printf("Item Name: \n");
     scanf("%s", item);
-    printf("year: \n");
+    printf("Year: \n");
     scanf("%s", year);
-    printf("month: \n");
+    printf("Month: \n");
     scanf("%s" , month);
-    printf("quantity: \n");
+    printf("Quantity: \n");
     scanf("%f" , &quantity);
-    printf("price: \n");
+    printf("Price: \n");
     scanf("%f" , &price);
 
     total_sales = quantity * price; // total price is calculated by quantity times price per pcs
@@ -183,7 +183,7 @@ void salesStoreData(){
 // list all sales data from txt file
 void searchSales(){
         printf("\n--------Sales Data----------");
-    printf("\nID \tsales person\titem name\tyear\tmonth\tquantity\tprice\ttotal sales");
+    printf("\nID \tSales Person\tItem Name\tYear\tMonth\tQuantity\tPrice\tTotal Sales");
     FILE *fp;
     fp = fopen(SALESDATAPATH, "r");
     while (!feof(fp)) {
