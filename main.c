@@ -121,11 +121,11 @@ void addCustomer(){
 // list all customer data inside the txt file
 void searchCustomer(){
 	printf("\n--------------customer list------------");
-    printf("\nid\tname\tphone\temail");
+    printf("\nID\tName\tPhone\t\tEmail");
     FILE *fp;
     fp = fopen(CUSTOMERDATAPATH, "r");
     while (!feof(fp)) {
-        fscanf(fp, "%s%s%s%s", customer_id, customer_name, customer_phone, customer_email);
+        fscanf(fp, "%s%s%s%s\n", customer_id, customer_name, customer_phone, customer_email);
         printf("\n%s\t%s\t%s\t%s", customer_id, customer_name, customer_phone, customer_email);
     }
     fclose(fp);
