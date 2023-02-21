@@ -183,12 +183,12 @@ void salesStoreData(){
 // list all sales data from txt file
 void searchSales(){
         printf("\n--------Sales Data----------");
-    printf("\nID \tSales Person\tItem Name\tYear\tMonth\tQuantity\tPrice\tTotal Sales");
+    printf("\nID \tSales Person\tItem Name\tYear\tMonth\tQuantity\tPrice\t\tTotal Sales");
     FILE *fp;
     fp = fopen(SALESDATAPATH, "r");
     while (!feof(fp)) {
         fscanf(fp, "%s %s %s %s %s %s %s %s\n", sales_customer_id, salesperson_name, item, year, month, print_quantity, print_price, print_total_sales);
-        printf("\n%s \t%s \t\t%s\t\t%s \t%s \t%s \t\t%s \t%s", sales_customer_id, salesperson_name, item, year, month, print_quantity, print_price, print_total_sales);
+        printf("\n%s \t%s \t\t%s\t\t%s \t%s \t%s \t\t%s \t\t%s", sales_customer_id, salesperson_name, item, year, month, print_quantity, print_price, print_total_sales);
     }
     fclose(fp);
     printf("\n");
