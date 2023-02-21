@@ -4,6 +4,6 @@ Customer Relationship Management (CRM) Software Program Project
 > Gavin Wibisana 407NKTOB<br/>
 > Kaiwen Xue 926QRAEO<br/>
 > Okkar Sett DEET 6879ES6V<br/>
-> Yuehaozhe Xie 926qraeo<br/>
+> Yuehaozhe Xie 926QRAEO<br/>
 
 >Email: **general@gavinwibisana.me** <br/>
