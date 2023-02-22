@@ -53,7 +53,8 @@ void mainMenu(){
 		printf("-------------- MAIN MENU ------------\n");
         printf("1. Contact Management \n");
         printf("2. Sales Data \n");
-        printf("3. Exit \n");
+        printf("3. Sales Analytics \n");
+        printf("4. Exit \n");
         printf("Enter your Choice: ");
         scanf("%d", &inputMenu);
 
@@ -64,10 +65,16 @@ void mainMenu(){
 		else if (inputMenu == 2){
 			salesMenu(); // go to sales menu
 		}
-		else if (inputMenu == 3){
+
+        else if (inputMenu == 3){
+            salesAnalytics();
+        }
+
+		else if (inputMenu == 4){
             printf("Thank You for using my CSM Program!");
 			exit(0); // exit the program
 		}
+
 		else{
 			printf("Try Again!\n"); // handle execption when user put wrong menus
 		}
@@ -192,4 +199,10 @@ void searchSales(){
     }
     fclose(fp);
     printf("\n");
+}
+
+// sales analytical start here
+
+void salesAnalytics(){
+
 }
