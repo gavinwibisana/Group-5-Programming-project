@@ -202,7 +202,15 @@ void searchSales(){
 }
 
 // sales analytical start here
-
 void salesAnalytics(){
-
+      printf("\nPrice\t\tTotal Sales");
+    FILE *fp;
+    fp = fopen(SALESDATAPATH, "r");
+    while (!feof(fp)) {
+        fscanf(fp, "%s %s %s %s %s %s %s %s\n", sales_customer_id, salesperson_name, item, year, month, print_quantity, print_price, print_total_sales);
+        printf("\n %s \t\t%s", print_price, print_total_sales);
+    }
+    fclose(fp);
+    printf("\n");
+    mainMenu();
 }
